@@ -38,23 +38,15 @@ find_path(R_INCLUDE_DIR R.h PATHS /usr/local/lib /usr/local/lib64 /usr/share /us
 find_library(R_LIBRARY_BASE R PATHS ${R_BASE_DIR} PATH_SUFFIXES /lib /bin/x64 DOC "R library (example libR.a, libR.dylib, etc.).")
 
 # If not found, try to find DLL
-if(R_LIBRARY_BASE)
-  message(STATUS "Found R import library: ${R_LIBRARY_BASE}")
-else()
-  message(WARNING "R import library not found. Trying to find R.dll ...")
-
+if(NOT R_LIBRARY_BASE)
   find_file(
     R_DLL
     NAMES R.dll
     PATHS ${R_BASE_DIR}
     PATH_SUFFIXES bin/x64 bin
   )
-
   if(R_DLL)
-    message(STATUS "Found R DLL: ${R_DLL}")
     set(R_LIBRARY_BASE ${R_DLL})
-  else()
-    message(WARNING "R.dll not found ...")
   endif()
 endif()
 
