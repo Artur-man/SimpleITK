@@ -52,6 +52,9 @@ else()
 
   if(R_DLL)
     message(STATUS "Found R DLL: ${R_DLL}")
+    set(R_LIBRARY_BASE ${R_DLL})
+  else()
+    message(WARNING "R.dll not found ...")
   endif()
 endif()
 
