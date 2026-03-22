@@ -26,7 +26,6 @@ if(R_COMMAND)
 
 endif(R_COMMAND)
 
-# find_program(RSCRIPT_EXECUTABLE Rscript DOC "Rscript executable.")
 find_program(RSCRIPT_EXECUTABLE Rscript PATHS ${R_BASE_DIR} PATH_SUFFIXES bin/x64 bin/ 	DOC "Rscript executable.")
 
 set(CMAKE_FIND_APPBUNDLE ${TEMP_CMAKE_FIND_APPBUNDLE})
