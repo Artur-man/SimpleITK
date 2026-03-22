@@ -34,7 +34,6 @@ set(CMAKE_FIND_APPBUNDLE ${TEMP_CMAKE_FIND_APPBUNDLE})
 # R.h gets installed in all sorts of places -
 # ubuntu: /usr/share/R/include, RHEL/Fedora: /usr/include/R/R.h
 find_path(R_INCLUDE_DIR R.h PATHS /usr/local/lib /usr/local/lib64 /usr/share /usr/include ${R_BASE_DIR} PATH_SUFFIXES include R R/include DOC "Path to file R.h")
-# find_library(R_LIBRARY_BASE R PATHS ${R_BASE_DIR} PATH_SUFFIXES /lib DOC "R library (example libR.a, libR.dylib, etc.).")
 find_library(R_LIBRARY_BASE R PATHS ${R_BASE_DIR} PATH_SUFFIXES /lib /bin/x64 DOC "R library (example libR.a, libR.dylib, etc.).")
 
 # If not found, try to find DLL
